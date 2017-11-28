@@ -9,5 +9,6 @@ import com.fortech.entity.Product;
 public interface ProductRepository extends CrudRepository<Product, Integer> {
 
 	public List<Product> findByProductModelId(Integer id);
+	public List<Product> findByBooked(Boolean booked);
 
 }

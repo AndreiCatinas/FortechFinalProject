@@ -18,27 +18,27 @@ public class ProductCategoryController {
 	@Autowired
 	private ProductCategoryService productCategoryService;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/category")
+	@RequestMapping(method = RequestMethod.GET, value = "/categories")
 	public List<ProductCategory> getAllProductCategory() {
 		return productCategoryService.getAllProductCategories();
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/category/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/categories/{id}")
 	public ProductCategory getProductCategory(@PathVariable Integer id) {
 		return productCategoryService.getProductCategory(id);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/category")
+	@RequestMapping(method = RequestMethod.POST, value = "/categories")
 	public void addProductCategory(@RequestBody ProductCategory productCategory) {
 		productCategoryService.addProductCategory(productCategory);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/category/{id}")
+	@RequestMapping(method = RequestMethod.PUT, value = "/categories/{id}")
 	public void updateProductCategory(@RequestBody ProductCategory productCategory, Integer id) {
 		productCategoryService.updateProductCategory(productCategory);
 	}
 
-	@RequestMapping(method = RequestMethod.DELETE, value = "/category/{id}")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/categories/{id}")
 	public void deleteProductCategory(@PathVariable Integer id) {
 		productCategoryService.deleteProductCategory(id);
 	}

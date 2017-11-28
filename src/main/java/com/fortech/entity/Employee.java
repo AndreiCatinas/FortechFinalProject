@@ -3,13 +3,14 @@ package com.fortech.entity;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 @Table(name = "employee")
@@ -17,22 +18,27 @@ import org.hibernate.annotations.DynamicInsert;
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
 
+	@Size(min = 2, max = 30, message = "{field.size}")
 	private String firstname;
 
+	@Size(min = 2, max = 30, message = "{field.size}")
 	private String lastname;
 
+	@Size(min = 2, max = 30, message = "{field.size}")
 	private String department;
 
+	@Size(min = 8, max = 20, message = "{field.size}")
 	private String phone;
 
+	@Email(message = "{field.email}")
 	private String email;
 
 	private Boolean active;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private User user;
 
@@ -124,5 +130,13 @@ public class Employee {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", department="
+				+ department + ", phone=" + phone + ", email=" + email + ", active=" + active + ", user=" + user + "]";
+	}
+
+	
 
 }
