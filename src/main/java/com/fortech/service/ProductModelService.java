@@ -20,19 +20,9 @@ public class ProductModelService {
 		productModelRepository.findByProductCategoryId(id).forEach(productModels::add);
 		return productModels;
 	}
-	
-	public List<ProductModel> getAllProductModel() {
-		List<ProductModel> productModels = new ArrayList<>();
-		productModelRepository.findAll().forEach(productModels::add);
-		return productModels;
-	}
 
 	public ProductModel getProductModel(Integer id) {
 		return productModelRepository.findOne(id);
-	}
-	
-	public ProductModel getProductModel(String model) {
-		return productModelRepository.findByModel(model);
 	}
 
 	public void addProductModel(ProductModel productModel) {

@@ -1,7 +1,5 @@
 package com.fortech.entity;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,17 +21,14 @@ public class Booking {
 	private int id;
 
 	@Column(name = "date_from")
-	private Timestamp dateFrom;
+	private String dateFrom;
 
-	private String expires;
+	@Column(name = "date_to")
+	private String dateTo;
 
-	private Boolean active;
+	private Boolean returned;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "product_id")
-	private Product product;
-
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
 	private User user;
 
@@ -53,6 +48,10 @@ public class Booking {
 		this.product = product;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id")
+	private Product product;
+
 	public int getId() {
 		return id;
 	}
@@ -61,27 +60,32 @@ public class Booking {
 		this.id = id;
 	}
 
-	public Timestamp getDateFrom() {
+	public Boolean getReturned() {
+		return returned;
+	}
+
+	public void setReturned(Boolean returned) {
+		this.returned = returned;
+	}
+
+	public String getDateFrom() {
 		return dateFrom;
 	}
 
-	public void setDateFrom(Timestamp dateFrom) {
+	public void setDateFrom(String dateFrom) {
 		this.dateFrom = dateFrom;
 	}
 
-	public String getExpires() {
-		return expires;
+	public String getDateTo() {
+		return dateTo;
 	}
 
-	public void setExpires(String expires) {
-		this.expires = expires;
+	public void setDateTo(String dateTo) {
+		this.dateTo = dateTo;
 	}
 
-	public Boolean getActive() {
-		return active;
+	public boolean isReturned() {
+		return returned;
 	}
 
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
 }

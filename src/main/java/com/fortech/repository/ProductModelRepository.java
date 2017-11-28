@@ -9,5 +9,4 @@ import com.fortech.entity.ProductModel;
 public interface ProductModelRepository extends CrudRepository<ProductModel, Integer> {
 
 	public List<ProductModel> findByProductCategoryId(Integer id);
-	public ProductModel findByModel(String model);
 }

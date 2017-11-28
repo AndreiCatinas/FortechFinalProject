@@ -13,17 +13,13 @@ import org.hibernate.annotations.DynamicInsert;
 public class ProductCategory {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue	
 	private int id;
 
 	private String category;
 
 	public ProductCategory() {
 
-	}
-	
-	public ProductCategory(String category) {
-		this.category = category;
 	}
 
 	public ProductCategory(Integer id, String category) {
@@ -45,11 +41,6 @@ public class ProductCategory {
 
 	public void setCategory(String category) {
 		this.category = category;
-	}
-
-	@Override
-	public String toString() {
-		return this.category;
 	}
 
 }

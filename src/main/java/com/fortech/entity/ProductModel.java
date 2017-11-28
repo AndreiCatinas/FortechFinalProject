@@ -18,7 +18,7 @@ public class ProductModel {
 
 	private String model;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
 	private ProductCategory productCategory;
 
@@ -29,11 +29,6 @@ public class ProductModel {
 	public ProductModel(Integer id, String model) {
 		this.id = id;
 		this.model = model;
-	}
-	
-	public ProductModel(String model, ProductCategory productCategory) {
-		this.model = model;
-		this.productCategory = productCategory;
 	}
 
 	public ProductModel(String model, Integer productCategoryId) {
@@ -63,11 +58,6 @@ public class ProductModel {
 
 	public void setModel(String model) {
 		this.model = model;
-	}
-	
-	@Override
-	public String toString() {
-		return this.model;
 	}
 
 }
