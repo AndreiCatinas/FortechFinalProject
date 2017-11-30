@@ -25,41 +25,18 @@ public class Product {
 	@Column(name = "serial_number")
 	private String serialNumber;
 
-	@Column(name = "aquisition_date")
 	private String aquisitionDate;
 
 	private String description;
 
-	@Column(name = "extend_limit")
-	private int extendLimit;
-
 	private Boolean booked;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "model_id")
 	private ProductModel productModel;
 
 	public Product() {
 
-	}
-
-	public Product(int id, String name, String serialNumber, String aquisitionDate, String description,
-			int extendLimit) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.serialNumber = serialNumber;
-		this.aquisitionDate = aquisitionDate;
-		this.description = description;
-		this.extendLimit = extendLimit;
-	}
-
-	public ProductModel getProductModel() {
-		return productModel;
-	}
-
-	public void setProductModel(ProductModel productModel) {
-		this.productModel = productModel;
 	}
 
 	public int getId() {
@@ -68,6 +45,14 @@ public class Product {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getSerialNumber() {
@@ -86,14 +71,6 @@ public class Product {
 		this.aquisitionDate = aquisitionDate;
 	}
 
-	public boolean isBooked() {
-		return booked;
-	}
-
-	public void setBooked(boolean booked) {
-		this.booked = booked;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -102,20 +79,20 @@ public class Product {
 		this.description = description;
 	}
 
-	public int getExtendLimit() {
-		return extendLimit;
+	public Boolean getBooked() {
+		return booked;
 	}
 
-	public void setExtendLimit(int extendLimit) {
-		this.extendLimit = extendLimit;
+	public void setBooked(Boolean booked) {
+		this.booked = booked;
 	}
 
-	public String getName() {
-		return name;
+	public ProductModel getProductModel() {
+		return productModel;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProductModel(ProductModel productModel) {
+		this.productModel = productModel;
 	}
 
 }

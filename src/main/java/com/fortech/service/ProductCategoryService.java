@@ -24,6 +24,10 @@ public class ProductCategoryService {
 	public ProductCategory getProductCategory(Integer id) {
 		return productCategoryRepository.findOne(id);
 	}
+	
+	public ProductCategory getProductCategory(String category) {
+		return productCategoryRepository.findByCategory(category);
+	}
 
 	public void addProductCategory(ProductCategory productCategory) {
 		productCategoryRepository.save(productCategory);

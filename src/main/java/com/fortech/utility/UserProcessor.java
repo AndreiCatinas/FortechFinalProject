@@ -9,6 +9,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserProcessor {
 	
+	/**
+	 * 
+	 * @param length
+	 * @return Random generated password 
+	 */
 	public static String generatePassword(Integer length) {
 		RandomStringGenerator generator = new RandomStringGenerator.Builder()
 		        .withinRange('0', 'z')

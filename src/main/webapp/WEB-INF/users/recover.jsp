@@ -52,7 +52,6 @@ input[type="password"] {
 	margin-bottom: 20px;
 	border-radius: 5;
 }
-}
 </style>
 <title>Recover</title>
 </head>

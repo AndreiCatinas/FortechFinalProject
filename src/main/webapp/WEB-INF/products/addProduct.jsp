@@ -6,11 +6,11 @@
 <head>
 <title>New Product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <style>
 .error {
@@ -18,7 +18,8 @@
 	text-align: center;
 }
 </style>
-<body>
+<body style="background: #eee !important;">
+
 	<div>
 		<jsp:include page="../userNavbar.jsp"></jsp:include>
 	</div>
@@ -73,8 +74,8 @@
 
 							<div class="form-group">
 								<form:label path="aquisitionDate">Aquisition Date:</form:label>
-								<form:input type="date" path="aquisitionDate"
-									class="form-control" />
+								<form:input required="required" type="date"
+									path="aquisitionDate" class="form-control" />
 								<form:errors path="aquisitionDate" cssClass="error" />
 							</div>
 

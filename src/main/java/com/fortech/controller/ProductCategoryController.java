@@ -18,6 +18,7 @@ public class ProductCategoryController {
 	@Autowired
 	private ProductCategoryService productCategoryService;
 
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/categories")
 	public List<ProductCategory> getAllProductCategory() {
 		return productCategoryService.getAllProductCategories();

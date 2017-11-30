@@ -8,7 +8,7 @@
 
 <title>Home</title>
 </head>
-<body>
+<body style="background: #eee !important;">
 	<div>
 		<jsp:include page="userNavbar.jsp"></jsp:include>
 	</div>

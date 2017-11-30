@@ -13,7 +13,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background: #eee !important;">
+
 
 	<div>
 		<jsp:include page="../userNavbar.jsp"></jsp:include>
@@ -68,13 +69,11 @@
 									<td>${user.createDate}</td>
 									<td>${user.role}</td>
 									<sec:authorize access="hasRole('ROLE_ADMIN')">
-										<td><a
-											href="<c:url value='/users/update/${user.id}' />">
+										<td><a href="<c:url value='/users/update/${user.id}' />">
 												<span class="glyphicon glyphicon-pencil"></span>
 										</a></td>
 
-										<td><a
-											href="<c:url value='/users/delete/${user.id}' />">
+										<td><a href="<c:url value='/users/delete/${user.id}' />">
 												<span class="glyphicon glyphicon-trash city-label"></span>
 										</a></td>
 									</sec:authorize>

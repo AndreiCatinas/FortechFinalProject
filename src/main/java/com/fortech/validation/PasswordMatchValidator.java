@@ -7,7 +7,7 @@ import com.fortech.entity.User;
 
 /*
  * PasswordMatch - annotation
- * User - what it validates
+ * User - validated entity
  */
 public class PasswordMatchValidator implements ConstraintValidator<PasswordMatch, User>{
 

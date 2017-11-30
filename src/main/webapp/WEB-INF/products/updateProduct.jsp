@@ -6,14 +6,16 @@
 <head>
 <title>Update Product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
+<body style="background: #eee !important;">
+
 
 	<div>
 		<jsp:include page="../userNavbar.jsp"></jsp:include>
@@ -42,12 +44,14 @@
 							<div class="form-group">
 								<label class="control-label">Category</label>
 								<form:select path="category" id="c"
-									onChange="changeCat(this.value)" class="custom-select form-control">
+									onChange="changeCat(this.value)"
+									class="custom-select form-control">
 									<form:option value="" label="--- Select ---" />
 								</form:select>
 
 								<label class="control-label">Model</label>
-								<form:select path="model" id="m" class="custom-select form-control">
+								<form:select path="model" id="m"
+									class="custom-select form-control">
 									<form:option value="" label="--- Select ---" />
 								</form:select>
 							</div>

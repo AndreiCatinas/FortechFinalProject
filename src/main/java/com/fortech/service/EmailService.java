@@ -36,7 +36,6 @@ public class EmailService {
 				helper.setSubject("Fortech App Password Reset");
 				helper.setSentDate(new Date());
 				String text = "Follow this link to reset your password: <a href = 'localhost:8080/reset/" + token + "'> Reset </a>";
-
 				helper.setText(text);
 			}
 		};

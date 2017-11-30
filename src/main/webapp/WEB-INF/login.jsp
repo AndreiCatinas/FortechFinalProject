@@ -17,9 +17,7 @@ body {
 
 .error {
 	color: red;
-	text-align
-	=
-	center;
+	text-align: center;
 }
 
 .form-signin {
@@ -31,14 +29,10 @@ body {
 	background-color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	justify-content: space-between;
-	.
-	form-signin-heading
-	,
-	.checkbox
-	{
-	margin-bottom
-	:
-	30px;
+}
+
+.form-signin-heading, .checkbox {
+	margin-bottom: 30px;
 }
 
 .form-control {
@@ -85,8 +79,8 @@ input[type="password"] {
 				placeholder="Password" path="password" />
 			<a href="/register" style="text-align: left;">Register</a>
 
-			<a href="/recover" style="float: right; clear: both;">Forgot
-				your password?</a>
+			<a href="/recover" style="float: right; clear: both;">Forgot your
+				password?</a>
 			<form:button class="btn btn-lg btn-primary btn-block" type="submit">Login</form:button>
 		</form:form>
 	</div>
